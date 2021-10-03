@@ -1,0 +1,16 @@
+<h1> Tweet Info! </h1>
+
+<p>
+   <a href="/">Home |</a>
+   <a href="/createtweet/">Createtweet |</a>
+   <a href="/logout/">Logout</a>
+</p>
+<br>
+
+
+<div>
+   <br>
+   <p>Time Created: {{tweets.time}}</p>
+   <p>Description: {{tweets.body}}</p>
+   <p>Created By: <a href="/userinfo/{{tweets.my_user.id}}/">{{tweets.my_user}}</a></p>
+</div>

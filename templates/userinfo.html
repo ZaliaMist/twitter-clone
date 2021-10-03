@@ -1,0 +1,25 @@
+<h1> User Profile! </h1>
+
+{% if user not in request.user.following.all %}
+        <button><a href="/follow/{{user.id}}/">Follow</a></button>
+{% else %}
+        <button><a href="/unfollow/{{user.id}}/">Unfollow</a></button>
+{% endif %}
+
+<p>
+   <a href="/">Home |</a>
+   <a href="/createtweet/">Createtweet |</a>
+   <a href="/logout/">Logout</a>
+</p>
+<br>
+
+
+<br>
+<h3>Total Tweets by {{user.username}}: {{tweets|length}}</h3>
+
+
+<h3>Total people being followed: {{user.following.all|length}}</h3>
+{% for person in user.following.all %}
+        <p>{{person}}</p>
+{% endfor %}
+

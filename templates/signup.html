@@ -1,0 +1,9 @@
+<h1> You Can Sign Up Here New Tweeter! </h1>
+
+<form method="post">
+   {% csrf_token %}
+       <p>Name: {{form.display_name}}</p>
+       <p>Username: {{form.username}}</p>
+       <p>Password: {{form.password}}</p>
+   <input type="submit" value="Submit!">
+</form>

@@ -1,0 +1,8 @@
+<h1>Notifications: </h1>
+
+{% for notification in notifications %}
+    <ul>
+        <li>Tagged By: {{notification.user_who_tagged_me}}</li>
+        <li>Content: {{notification.tweet.body}}</li>
+</ul>
+{% endfor %}

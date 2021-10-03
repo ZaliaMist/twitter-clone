@@ -1,0 +1,10 @@
+<h1> I Command You To Login At Once! </h1>
+
+
+<form action="" method="post">
+{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" value="Submit" />
+</form>
+
+Don't have an acct yet? <a href="/signup/">SignUp Here</a>

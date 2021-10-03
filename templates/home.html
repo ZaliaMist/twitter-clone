@@ -1,0 +1,35 @@
+<h1> Home! </h1>
+
+{% if user.is_authenticated %}
+   Logged in as: <button><a href="/userinfo/{{user.id}}/">{{user.username}}</a></button>
+{% endif %}
+
+
+<p>
+   <a href="/">Home |</a>
+   <a href="/createtweet/">Createtweet |</a>
+   <a href="/logout/">Logout |</a>
+   <a href="/allusers/">All Users</a>
+   <p>Notifications: {{num_notes}}</p>
+</p>
+<br>
+
+
+{% if notifications %}
+      <button>
+         <a href="/notification/{{user.id}}/">
+            Your Notifications!
+         </a>
+      </button>
+{% endif %}
+
+
+<h3>YOUR TWEETS PLUS YOUR FOLLOWING'S TWEETS:</h3>
+
+{% for tweet in tweets %}
+   {% if tweet.my_user in user.following.all or user == tweet.my_user %}
+      <div>Tweet: <a href="tweetinfo/{{tweet.id}}/">{{tweet.body}}</a></div>
+      <br>
+   {% endif %}
+{% endfor %}
+
