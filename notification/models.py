@@ -10,5 +10,5 @@ class Notify(models.Model):
     is_seen = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.tweet.title
+        return self.tweet
 
